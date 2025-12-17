@@ -1,0 +1,52 @@
+# generated using pymatgen
+data_Ag(TeMo)6
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   18.19154404
+_cell_length_b   4.58640283
+_cell_length_c   9.54432697
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   120.64044263
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Ag(TeMo)6
+_chemical_formula_sum   'Ag2 Te12 Mo12'
+_cell_volume   685.13891774
+_cell_formula_units_Z   2
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ag  Ag0  1  0.00000000  0.00000000  0.00000000  1.0
+  Ag  Ag1  1  0.50000000  0.50000000  0.00000000  1.0
+  Te  Te2  1  0.11944913  0.00000000  0.63549223  1.0
+  Te  Te3  1  0.04262539  0.50000000  0.25174168  1.0
+  Te  Te4  1  0.95737461  0.50000000  0.74825832  1.0
+  Te  Te5  1  0.32077277  0.50000000  0.89363065  1.0
+  Te  Te6  1  0.67922723  0.50000000  0.10636935  1.0
+  Te  Te7  1  0.88055087  0.00000000  0.36450777  1.0
+  Te  Te8  1  0.61944913  0.50000000  0.63549223  1.0
+  Te  Te9  1  0.54262539  0.00000000  0.25174168  1.0
+  Te  Te10  1  0.45737461  0.00000000  0.74825832  1.0
+  Te  Te11  1  0.82077277  0.00000000  0.89363065  1.0
+  Te  Te12  1  0.17922723  0.00000000  0.10636935  1.0
+  Te  Te13  1  0.38055087  0.50000000  0.36450777  1.0
+  Mo  Mo14  1  0.71503115  0.00000000  0.31690128  1.0
+  Mo  Mo15  1  0.28496885  0.00000000  0.68309872  1.0
+  Mo  Mo16  1  0.84577759  0.00000000  0.62036983  1.0
+  Mo  Mo17  1  0.15422241  0.00000000  0.37963017  1.0
+  Mo  Mo18  1  0.18804360  0.50000000  0.56415747  1.0
+  Mo  Mo19  1  0.81195640  0.50000000  0.43584253  1.0
+  Mo  Mo20  1  0.21503115  0.50000000  0.31690128  1.0
+  Mo  Mo21  1  0.78496885  0.50000000  0.68309872  1.0
+  Mo  Mo22  1  0.34577759  0.50000000  0.62036983  1.0
+  Mo  Mo23  1  0.65422241  0.50000000  0.37963017  1.0
+  Mo  Mo24  1  0.68804359  0.00000000  0.56415747  1.0
+  Mo  Mo25  1  0.31195640  0.00000000  0.43584253  1.0

@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_BaCaTaVFeReBi2AsPbAu
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   14.15328026
+_cell_length_b   10.60051537
+_cell_length_c   15.00000000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   BaCaTaVFeReBi2AsPbAu
+_chemical_formula_sum   'Ba1 Ca1 Ta1 V1 Fe1 Re1 Bi2 As1 Pb1 Au1'
+_cell_volume   2250.48097276
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ca  Ca0  1  0.29733906  0.93029527  0.49839103  1
+  Fe  Fe1  1  0.06676448  0.72897304  0.42267381  1
+  As  As2  1  0.78679481  0.00918460  0.51079782  1
+  V  V3  1  0.60363623  0.96710614  0.49863833  1
+  Re  Re4  1  0.30592549  0.80050848  0.61984680  1
+  Pb  Pb5  1  0.71158773  0.54030302  0.45361392  1
+  Bi  Bi6  1  0.39278920  0.29813484  0.50081195  1
+  Au  Au7  1  0.53409920  0.83450976  0.50588893  1
+  Bi  Bi8  1  0.18539249  0.82217215  0.46718707  1
+  Ba  Ba9  1  0.92598931  0.08395399  0.48189861  1
+  Ta  Ta10  1  0.18968202  0.98485872  0.54025172  1
