@@ -487,3 +487,5 @@ if __name__ == "__main__":
     print(f"第一个结构: {samples[0].num_atoms} 个原子")
 
 
+
+

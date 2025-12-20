@@ -286,18 +286,35 @@ def plot_comparison_table(baseline_results: Dict,
     # 表格数据
     columns = ['Method', 'Avg HER ΔG (eV)', 'Stability Score', 'Synthesis Success Rate']
     
+    # 获取数值
+    baseline_delta_g = baseline_results.get('avg_delta_g', 0)
+    baseline_stability = baseline_results.get('stability', 0)
+    baseline_synth = baseline_results.get('synthesis_rate', 0)
+    
+    our_delta_g = our_results.get('avg_delta_g', 0)
+    our_stability = our_results.get('stability', 0)
+    our_synth = our_results.get('synthesis_rate', 0)
+    
+    # 根据实际比较结果确定箭头方向
+    # ΔG：越低越好，所以低于baseline用↓（好），高于用↑（差）
+    delta_g_arrow = "↓" if our_delta_g < baseline_delta_g else ("↑" if our_delta_g > baseline_delta_g else "")
+    # Stability：越高越好
+    stability_arrow = "↑" if our_stability > baseline_stability else ("↓" if our_stability < baseline_stability else "")
+    # Synthesis Rate：越高越好
+    synth_arrow = "↑" if our_synth > baseline_synth else ("↓" if our_synth < baseline_synth else "")
+    
     baseline_row = [
         'Baseline',
-        f"{baseline_results.get('avg_delta_g', 0):.3f}",
-        f"{baseline_results.get('stability', 0):.3f}",
-        f"{baseline_results.get('synthesis_rate', 0):.1%}"
+        f"{baseline_delta_g:.3f}",
+        f"{baseline_stability:.3f}",
+        f"{baseline_synth:.1%}"
     ]
     
     our_row = [
         'Ours',
-        f"{our_results.get('avg_delta_g', 0):.3f} ↓",
-        f"{our_results.get('stability', 0):.3f} ↑",
-        f"{our_results.get('synthesis_rate', 0):.1%} ↑"
+        f"{our_delta_g:.3f} {delta_g_arrow}".strip(),
+        f"{our_stability:.3f} {stability_arrow}".strip(),
+        f"{our_synth:.1%} {synth_arrow}".strip()
     ]
     
     # 创建表格
@@ -443,5 +460,7 @@ if __name__ == "__main__":
     plot_generated_structures(structures_info)
     
     print("所有测试图表已生成在 results/ 目录下")
+
+
 
 
