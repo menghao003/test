@@ -73,9 +73,18 @@ class StructureGenerator(nn.Module):
                            target_delta_g: float = 0.0,
                            target_stability: float = 0.8,
                            target_synthesizability: float = 0.8,
-                           device: str = 'cpu') -> List[Structure]:
+                           device: str = 'cpu',
+                           temperature: float = 1.0,
+                           guidance_scale: float = 1.5,
+                           max_attempts: int = 3) -> List[Structure]:
         """
-        生成符合目标属性的材料结构
+        生成符合目标属性的材料结构（优化版）
+        
+        改进：
+        - 添加温度控制
+        - 增强条件引导
+        - 多次尝试机制
+        - 更好的原子数分布
         
         Args:
             num_structures: 生成结构数量
@@ -84,6 +93,9 @@ class StructureGenerator(nn.Module):
             target_stability: 目标稳定性（0-1）
             target_synthesizability: 目标可合成性（0-1）
             device: 计算设备
+            temperature: 采样温度（控制随机性）
+            guidance_scale: 条件引导强度
+            max_attempts: 每个结构的最大尝试次数
         
         Returns:
             生成的Structure对象列表
@@ -91,36 +103,62 @@ class StructureGenerator(nn.Module):
         self.eval()
         structures = []
         
-        # 设置目标条件
-        target_conditions = torch.tensor([
+        # 设置目标条件（添加随机扰动以增加多样性）
+        base_conditions = torch.tensor([
             [target_delta_g, target_stability, target_synthesizability]
-        ], device=device).repeat(num_structures, 1)
+        ], device=device)
         
         for i in range(num_structures):
-            try:
-                # 随机选择原子数
-                num_atoms = np.random.randint(num_atoms_range[0], num_atoms_range[1] + 1)
-                
-                # 从扩散模型采样
-                samples = self.diffusion_model.guided_sample(
-                    num_atoms=num_atoms,
-                    num_samples=1,
-                    target_properties=target_conditions[i:i+1],
-                    device=device
-                )
-                
-                if samples:
-                    # 转换为晶体结构
-                    structure = self._data_to_structure(samples[0])
-                    if structure is not None:
-                        structures.append(structure)
-                        logger.info(f"成功生成结构 {i+1}/{num_structures}: {structure.formula}")
-                        
-            except Exception as e:
-                logger.warning(f"生成结构 {i+1} 时出错: {e}")
-                continue
+            success = False
+            for attempt in range(max_attempts):
+                try:
+                    # 添加轻微的条件扰动（减小扰动幅度以更接近目标）
+                    noise_scale = 0.02 if attempt == 0 else 0.05  # 首次尝试使用更小的扰动
+                    condition_noise = torch.randn_like(base_conditions) * noise_scale
+                    current_conditions = base_conditions + condition_noise
+                    
+                    # 使用更好的原子数分布（偏向中等规模）
+                    if attempt == 0:
+                        # 首次尝试使用高斯分布，偏向中间值
+                        mean_atoms = (num_atoms_range[0] + num_atoms_range[1]) / 2
+                        std_atoms = (num_atoms_range[1] - num_atoms_range[0]) / 4
+                        num_atoms = int(np.clip(
+                            np.random.normal(mean_atoms, std_atoms),
+                            num_atoms_range[0], num_atoms_range[1]
+                        ))
+                    else:
+                        # 后续尝试使用均匀分布
+                        num_atoms = np.random.randint(num_atoms_range[0], num_atoms_range[1] + 1)
+                    
+                    # 调整温度（尝试次数越多，温度越高，探索性越强）
+                    current_temp = temperature * (1.0 + attempt * 0.2)
+                    
+                    # 从扩散模型采样
+                    samples = self.diffusion_model.guided_sample(
+                        num_atoms=num_atoms,
+                        num_samples=1,
+                        target_properties=current_conditions,
+                        guidance_scale=guidance_scale,
+                        device=device
+                    )
+                    
+                    if samples:
+                        # 转换为晶体结构
+                        structure = self._data_to_structure(samples[0])
+                        if structure is not None:
+                            structures.append(structure)
+                            logger.info(f"成功生成结构 {i+1}/{num_structures}: {structure.formula} (尝试 {attempt+1}/{max_attempts})")
+                            success = True
+                            break
+                            
+                except Exception as e:
+                    logger.debug(f"生成结构 {i+1} 尝试 {attempt+1} 失败: {e}")
+                    continue
+            
+            if not success:
+                logger.warning(f"结构 {i+1} 在 {max_attempts} 次尝试后仍未成功")
         
-        logger.info(f"共生成 {len(structures)} 个有效结构")
+        logger.info(f"共生成 {len(structures)}/{num_structures} 个有效结构 (成功率: {len(structures)/num_structures*100:.1f}%)")
         return structures
     
     def _data_to_structure(self, data: Data) -> Optional[Structure]:

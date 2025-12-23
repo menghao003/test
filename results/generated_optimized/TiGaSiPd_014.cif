@@ -1,0 +1,30 @@
+# generated using pymatgen
+data_TiGaSiPd
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   3.39654779
+_cell_length_b   6.09541416
+_cell_length_c   15.00000000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   TiGaSiPd
+_chemical_formula_sum   'Ti1 Ga1 Si1 Pd1'
+_cell_volume   310.55048290
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Ga  Ga0  1  0.72505006  0.65625221  0.52848701  1
+  Ti  Ti1  1  0.13621689  0.32813668  0.53894052  1
+  Si  Si2  1  0.12474990  0.18298038  0.45238361  1
+  Pd  Pd3  1  0.01398316  0.83263073  0.48018886  1

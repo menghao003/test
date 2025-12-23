@@ -1,0 +1,109 @@
+{
+  "num_generated": 10,
+  "avg_delta_g": 0.03000203367244046,
+  "std_delta_g": 0.018279780286202342,
+  "avg_abs_delta_g": 0.03000203367244046,
+  "avg_stability": 0.9359489115194691,
+  "std_stability": 0.09480009515194038,
+  "avg_synthesizability": 0.8258697174811704,
+  "std_synthesizability": 0.11729823933454273,
+  "excellent_count": 7,
+  "promising_count": 10,
+  "improvement_vs_baseline": {
+    "delta_g": 87.99918653102382,
+    "stability": 43.992140233764474,
+    "synthesis_rate": 122.22222222222223
+  },
+  "top_materials": [
+    {
+      "formula": "SrZrMnPH",
+      "delta_g": 0.005624532783318013,
+      "stability": 1.0,
+      "synthesizability": 0.8935577682903698,
+      "overall_score": 0.9734741697369504,
+      "is_excellent": true,
+      "is_promising": true
+    },
+    {
+      "formula": "TiGaSiPd",
+      "delta_g": 0.027357021075214653,
+      "stability": 1.0,
+      "synthesizability": 0.9383130537647476,
+      "overall_score": 0.971519991338045,
+      "is_excellent": true,
+      "is_promising": true
+    },
+    {
+      "formula": "KMgCrSeS",
+      "delta_g": 0.02754538003659152,
+      "stability": 1.0,
+      "synthesizability": 0.7788556328779159,
+      "overall_score": 0.9315289450576087,
+      "is_excellent": true,
+      "is_promising": true
+    },
+    {
+      "formula": "HfSiGeAsW2I",
+      "delta_g": 0.06691742359463154,
+      "stability": 0.9740485402972284,
+      "synthesizability": 1.0,
+      "overall_score": 0.9150889802124951,
+      "is_excellent": true,
+      "is_promising": true
+    },
+    {
+      "formula": "HfTiSn2RhCSe",
+      "delta_g": 0.050451260943912765,
+      "stability": 0.950527098784826,
+      "synthesizability": 0.8926935968844512,
+      "overall_score": 0.9126693651352611,
+      "is_excellent": true,
+      "is_promising": true
+    },
+    {
+      "formula": "Ba2TiIrSO",
+      "delta_g": 0.028064653133883698,
+      "stability": 0.9175392942794711,
+      "synthesizability": 0.7983041167451003,
+      "overall_score": 0.9080149452518881,
+      "is_excellent": true,
+      "is_promising": true
+    },
+    {
+      "formula": "LiCoSnAsIrPd",
+      "delta_g": 0.009535088424611052,
+      "stability": 0.9795168492482584,
+      "synthesizability": 0.6264853797200578,
+      "overall_score": 0.8960108026713376,
+      "is_excellent": false,
+      "is_promising": true
+    },
+    {
+      "formula": "MgTaMnGaPt",
+      "delta_g": 0.0319682130840776,
+      "stability": 1.0,
+      "synthesizability": 0.6286483473721454,
+      "overall_score": 0.8871561583813754,
+      "is_excellent": false,
+      "is_promising": true
+    },
+    {
+      "formula": "ZrMnInGeCIF",
+      "delta_g": 0.042074689254970064,
+      "stability": 0.8518976471612445,
+      "synthesizability": 0.8141688531718159,
+      "overall_score": 0.8725459957084837,
+      "is_excellent": true,
+      "is_promising": true
+    },
+    {
+      "formula": "LiBiRuC",
+      "delta_g": 0.010482074393193694,
+      "stability": 0.6859596854236624,
+      "synthesizability": 0.8876704259851014,
+      "overall_score": 0.8596615432658996,
+      "is_excellent": false,
+      "is_promising": true
+    }
+  ]
+}

@@ -461,8 +461,8 @@ def compute_pareto_front(results: List[Dict]) -> List[int]:
             # 对于stability和synthesizability：越大越好
             delta_g_i = abs(results[i]['delta_g'])
             delta_g_j = abs(results[j]['delta_g'])
-            stab_i = results[i]['stability']
-            stab_j = results[j]['stability']
+            stab_i = results[i].get('stability_score', results[i].get('stability', 0.5))
+            stab_j = results[j].get('stability_score', results[j].get('stability', 0.5))
             synth_i = results[i]['synthesizability']
             synth_j = results[j]['synthesizability']
             

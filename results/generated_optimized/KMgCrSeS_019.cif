@@ -1,0 +1,31 @@
+# generated using pymatgen
+data_KMgCrSeS
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   8.27449942
+_cell_length_b   4.89025927
+_cell_length_c   15.00000000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   KMgCrSeS
+_chemical_formula_sum   'K1 Mg1 Cr1 Se1 S1'
+_cell_volume   606.96671162
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Cr  Cr0  1  0.43806559  0.14717669  0.51774115  1
+  Se  Se1  1  0.85274824  0.21570613  0.50537569  1
+  K  K2  1  0.67977206  0.13154972  0.48453538  1
+  S  S3  1  0.89180193  0.88088510  0.51938860  1
+  Mg  Mg4  1  0.13761219  0.62468238  0.47295919  1

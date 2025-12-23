@@ -1,0 +1,33 @@
+# generated using pymatgen
+data_HfSiGeAsW2I
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   10.92644978
+_cell_length_b   8.67260742
+_cell_length_c   15.00000000
+_cell_angle_alpha   90.00000000
+_cell_angle_beta   90.00000000
+_cell_angle_gamma   90.00000000
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   HfSiGeAsW2I
+_chemical_formula_sum   'Hf1 Si1 Ge1 As1 W2 I1'
+_cell_volume   1421.41214129
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Hf  Hf0  1  0.97860619  0.82029445  0.48220965  1
+  Ge  Ge1  1  0.01742188  0.74394497  0.51165950  1
+  Si  Si2  1  0.20588646  0.48846753  0.48541643  1
+  W  W3  1  0.89398799  0.04561292  0.58180093  1
+  W  W4  1  0.13773565  0.31746383  0.49471226  1
+  As  As5  1  0.47470196  0.86513762  0.48927471  1
+  I  I6  1  0.29165989  0.71907871  0.45492653  1

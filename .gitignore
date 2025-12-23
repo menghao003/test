@@ -8,15 +8,17 @@ __pycache__/
 dist/
 build/
 
+# Jupyter Notebook
+.ipynb_checkpoints
+
 # Environment
 .env
-.venv/
 venv/
 ENV/
 
 # IDE
-.idea/
 .vscode/
+.idea/
 *.swp
 *.swo
 
@@ -24,11 +26,10 @@ ENV/
 .DS_Store
 Thumbs.db
 
-# Data (optional - uncomment if you want to exclude large data files)
-# data/raw/
+# Model checkpoints (除了 best_model.pt)
+checkpoints/checkpoint_epoch_*.pt
+checkpoints/final_model.pt
 
-# Jupyter
-.ipynb_checkpoints/
-
-# Logs
+# Temporary files
 *.log
+*.tmp
